@@ -3,7 +3,7 @@ import google.generativeai as genai
 import time
 
 # Configure GenerativeAI
-genai.configure(api_key='AIzaSyCLz47HJ1Ww_wue3nnYRKDdyXmksSpmZVo')
+genai.configure(api_key='')
 model = genai.GenerativeModel('gemini-pro')
 
 # Page Title and Background Color
