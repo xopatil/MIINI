@@ -136,12 +136,13 @@
                     <div class="row">
 
                         <div class="col-lg-6 col-12 mx-auto">
-                            <small>The website is under construction. 
+                            <small>Your gateway to musical discovery: explore genres, find favorites, and unearth new tunes!  
                             <a rel="nofollow" target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Click here</a></small>
                             <!-- please set the date time in the init.js file -->
                             
                           <h1 class="text-white mt-2 mb-4 pb-2">
-                                Stay tuned!
+                                 <span class="text first-text">I want to hear</span>
+                                  <span class="text sec-text">Happy Songs</span>
                             </h1>
 
 
@@ -160,6 +161,64 @@
         </main>
 
         <!-- JAVASCRIPT FILES -->
-        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+         <style>
+            /* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.container .text{
+    position: relative;
+    color: rgb(237, 173, 53);
+    font-size: 30px;
+    font-weight: 600;
+}
+.container .text.first-text{
+    color: #FFF;
+}
+.text.sec-text:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #010718;
+    border-left: 2px solid rgb(235, 173, 57);
+    animation: animate 4s steps(12) infinite;
+}
+@keyframes animate{
+    40%, 60%{
+        left: calc(100% + 4px);
+    }
+    100%{
+        left: 0%;
+    }
+}
+        </style>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            const text = document.querySelector(".sec-text");
+            const textLoad = () => {
+                setTimeout(() => {
+                    text.textContent = "Happy Songs";
+                }, 0);
+                setTimeout(() => {
+                    text.textContent = "Romantic Songs";
+                }, 4000);
+                setTimeout(() => {
+                    text.textContent = "Sad Songs";
+                }, 8000); //1s = 1000 milliseconds
+            }
+            textLoad();
+            setInterval(textLoad, 12000);
+        </script>
     </body>
 </html>
